@@ -6,15 +6,12 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
 
-    <changeSet id="b3b1fad9-6073-4d25-8117-864204829270" author="Bhuvana">
+    <changeSet id="d363f932-3a23-4d71-bb8e-fcac44ef4f3f" author="Bhuvana">
         <createTable tableName="bus">
             <column name="id" type="VARCHAR(255)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="number" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="name" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
             <column name="capacity" type="BIGINT">
@@ -23,14 +20,12 @@
             <column name="type" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="trip_id" type="VARCHAR(255)">
-                <constraints nullable="false" foreignKeyName="fk_trip_bus" references="trip(id)"/>
+            <column name="trip_number" type="BIGINT">
+                <constraints nullable="false"/>
             </column>
             <column name="created_at" type="TIMESTAMP">
-                <constraints nullable="true"/>
             </column>
             <column name="updated_at" type="TIMESTAMP">
-                <constraints nullable="true"/>
             </column>
 
 

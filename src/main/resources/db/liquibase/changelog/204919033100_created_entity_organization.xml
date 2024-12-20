@@ -7,44 +7,31 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
 
     <changeSet id="0ef45e81-7d6f-4720-98f5-1cb290c68b2b" author="Bhuvana">
-        <preConditions onFail="MARK_RAN">
-            <not>
-                <tableExists tableName="organization"/>
-            </not>
-        </preConditions>
+
         <createTable tableName="organization">
             <column name="id" type="VARCHAR(255)">
-                <constraints primaryKey="true" nullable="true"/>
+                <constraints primaryKey="true" />
             </column>
             <column name="name" type="VARCHAR(255)">
-                <constraints nullable="true"/>
             </column>
             <column name="phone_number" type="BIGINT">
-                <constraints nullable="true"/>
             </column>
             <column name="email" type="VARCHAR(255)">
-                <constraints nullable="true" unique = "true"/>
+                <constraints  unique = "true"/>
             </column>
             <column name="address1" type="VARCHAR(255)">
-                <constraints nullable="true"/>
             </column>
             <column name="address2" type="VARCHAR(255)">
-                <constraints nullable="true"/>
             </column>
             <column name="city" type="VARCHAR(255)">
-                <constraints nullable="true"/>
             </column>
             <column name="state" type="VARCHAR(255)">
-                <constraints nullable="true"/>
             </column>
             <column name="is_active" type="BOOLEAN">
-                <constraints nullable="true"/>
             </column>
             <column name="created_at" type="TIMESTAMP">
-                <constraints nullable="true"/>
             </column>
             <column name="updated_at" type="TIMESTAMP">
-                <constraints nullable="true"/>
             </column>
 
         </createTable>

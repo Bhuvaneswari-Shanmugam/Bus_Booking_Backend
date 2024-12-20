@@ -6,16 +6,16 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
     
-    <changeSet id="6efa7496-6210-4df8-aadf-fd184d7c0177" author="Bhuvana">
+    <changeSet id="b5d70d4a-9281-4aef-8ac8-e3e834a04336" author="Bhuvana">
         <createTable tableName="seat">
             <column name="id" type="VARCHAR(255)">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="number" type="BIGINT">
+            <column name="seat_number" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
-            <column name="bus_id" type="VARCHAR(255)" >
-                <constraints nullable="false" foreignKeyName="fk_seat_bus" references="bus(id)"/>
+            <column name="bus_number" type="BIGINT" >
+                <constraints nullable="false" />
             </column>
             <column name="created_at" type="TIMESTAMP">
                 <constraints nullable="true"/>

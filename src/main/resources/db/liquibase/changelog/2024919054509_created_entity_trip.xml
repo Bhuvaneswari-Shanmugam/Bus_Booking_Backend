@@ -6,10 +6,13 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
 
-    <changeSet id="76d6ff29-b640-4bdd-980d-7bd70636c18b" author="Bhuvana">
+    <changeSet id="d33ce92b-462a-4f6f-a6de-a10ee14f4765" author="Bhuvana">
         <createTable tableName="trip">
             <column name="id" type="VARCHAR(255)">
                 <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="trip_number" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" unique="true"/>
             </column>
             <column name="pickup_point" type="VARCHAR(255)">
                 <constraints nullable="false"/>
@@ -25,9 +28,6 @@
             </column>
             <column name="expense" type="BIGINT">
                 <constraints nullable="false"/>
-            </column>
-            <column name="organization_id" type="VARCHAR(255)">
-                <constraints nullable="false" foreignKeyName="fk_trip_organization" references="organization(id)"/>
             </column>
             <column name="created_at" type="TIMESTAMP">
                 <constraints nullable="true"/>

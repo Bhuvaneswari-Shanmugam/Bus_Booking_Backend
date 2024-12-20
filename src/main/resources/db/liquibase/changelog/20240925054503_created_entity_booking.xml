@@ -5,31 +5,41 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
 
-    <changeSet id="745c593f-890e-4647-81a3-6099daec5143" author="Bhuvana">
+    <changeSet id="70d44a90-f501-473a-af92-d7061bde6e78" author="Bhuvana">
         <createTable tableName="booking">
             <column name="id" type="VARCHAR(255)">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="seat_id" type="VARCHAR(255)">
-                <constraints nullable="false"/>
+            <column name="bus_id" type="VARCHAR(255)">
+                <constraints foreignKeyName="fk_bus_id"
+                             referencedTableName="bus"
+                             referencedColumnNames="id" nullable="false"/>
             </column>
-            <column name="customer_id" type="VARCHAR(255)">
-                <constraints nullable="false"/>
+            <column name="trip_id" type="VARCHAR(255)">
+                <constraints foreignKeyName="fk_trip_id"
+                             referencedTableName="trip"
+                             referencedColumnNames="id" nullable="false"/>
+            </column>
+            <column name="user_credential_id" type="VARCHAR(255)">
+                <constraints foreignKeyName="fk_user_credential_id"
+                             referencedTableName="user_credential"
+                             referencedColumnNames="id" nullable="false"/>
             </column>
             <column name="booking_date_time" type="TIMESTAMP">
-                <constraints nullable="true"/>
+                <constraints nullable="false"/>
             </column>
-            <column name="booking_status" type="VARCHAR(255)">
-                <constraints nullable="true"/>
+            <column name="booked_no_of_seats" type="BIGINT[]">
+                <constraints nullable="false"/>
             </column>
-            <column name="travelling_date" type="TIMESTAMP">
-                <constraints nullable="true"/>
+            <column name="per_seat_amount" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_price" type="BIGINT">
+                <constraints nullable="false"/>
             </column>
             <column name="created_at" type="TIMESTAMP">
-                <constraints nullable="true"/>
             </column>
             <column name="updated_at" type="TIMESTAMP">
-                <constraints nullable="true"/>
             </column>
 
         </createTable>
