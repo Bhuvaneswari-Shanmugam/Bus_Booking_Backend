@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="db/liquibase/changelog/20240925010509_created_entity_driver.xml"/>
+    <include file="db/liquibase/changelog/20240925015704_created_entity_feedback.xml"/>
+    <include file="db/liquibase/changelog/20240925041309_created_entity_seat.xml"/>
+    <include file="db/liquibase/changelog/20240925054503_created_entity_booking.xml"/>
+    <include file="db/liquibase/changelog/20241909050100_created_entity_customer.xml"/>
+    <include file="db/liquibase/changelog/2024919044300_created_entity_admin.xml"/>
+    <include file="db/liquibase/changelog/2024919045400_created_entity_bus.xml"/>
+    <include file="db/liquibase/changelog/2024919051104_created_entity_usersCredential.xml"/>
+    <include file="db/liquibase/changelog/2024919054509_created_entity_trip.xml"/>
+    <include file="db/liquibase/changelog/204919033100_created_entity_organization.xml"/>
+
+</databaseChangeLog>

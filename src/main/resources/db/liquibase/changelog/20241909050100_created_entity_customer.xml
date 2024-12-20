@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
+    <changeSet id="0bd40083-f838-4d90-90d9-7913cc939574" author="Bhuvana">
+        <createTable tableName="customer">
+            <column name="id" type="VARCHAR(255)">
+                <constraints primaryKey="false" nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="gender" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="phone_number" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trip_id" type="VARCHAR(255)">
+                <constraints nullable="false" foreignKeyName="fk_customer_trip" references="trip(id)"/>
+            </column>
+            <column name="user_credential_id" type="VARCHAR(255)">
+                <constraints nullable="false" foreignKeyName="fk_customer_userCredential" references="user_credential(id)"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
